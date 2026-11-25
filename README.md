@@ -1,1 +1,3 @@
-# campusone-college-management
+# CampusOne College Management System
+
+Flask + SQLite college project with admin, student and teacher dashboards, account creation and password recovery. Run locally with `pip install -r requirements.txt` and `python app.py` (local demo password: `demo123`). Public deployment uses Gunicorn, a persistent disk, an environment-provided admin password and generated session key. Configure ADMIN_PASSWORD privately in Render. Do not commit database files or secrets. Only use fictional records until the application has undergone a full security review. Existing local data is not migrated automatically.

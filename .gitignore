@@ -1,0 +1,5 @@
+college.db
+*.db
+__pycache__/
+.env
+.venv/

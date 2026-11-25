@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: campusone-college-management
+    runtime: python
+    plan: starter
+    region: singapore
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn --workers 1 --bind 0.0.0.0:$PORT app:app
+    disk:
+      name: campusone-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: DATABASE_PATH
+        value: /var/data/college.db
